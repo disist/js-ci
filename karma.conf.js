@@ -73,7 +73,7 @@ module.exports = function (config) {
     // https://github.com/karma-runner/karma/issues/1144#issuecomment-53633076
     if (configuration.browsers[0] === 'Chrome' && process.env.TRAVIS) {
         configuration.customLaunchers = {
-            'chrome-travis-ci': {
+            'Chrome-travis-ci': {
                 base: 'Chrome',
                 flags: ['--no-sandbox']
             }
