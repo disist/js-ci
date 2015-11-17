@@ -4,7 +4,8 @@
     "dependencies": {},
     "scripts": {
         "start": "gulp serve",
-        "test": "gulp test"
+        "test": "gulp test",
+        "e2e": "gulp protractor"
     },
     "devDependencies": {
         "estraverse": "~4.1.0",
