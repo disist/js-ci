@@ -79,7 +79,7 @@ module.exports = function (config) {
             }
         };
         console.log('>> started on travis');
-        configuration.browsers = ['Chrome_travis_ci'];
+        configuration.browsers = ['chrome_travis_ci'];
     }
 
     config.set(configuration);
