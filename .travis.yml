@@ -11,4 +11,5 @@ before_script:
 
 script:
   - npm test
+  - npm e2e
 
