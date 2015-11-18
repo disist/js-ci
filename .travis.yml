@@ -10,6 +10,6 @@ before_script:
   - bower install
 
 script:
-  - npm test
-  - npm e2e
+  - npm run test
+  - npm run e2e
 
