@@ -1,6 +1,6 @@
 {
     "name": "7JsCi",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "dependencies": {},
     "scripts": {
         "start": "gulp serve",
