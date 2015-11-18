@@ -71,7 +71,7 @@ module.exports = function (config) {
     // If you ever plan to use Chrome and Travis, you can keep it
     // If not, you can safely remove it
     // https://github.com/karma-runner/karma/issues/1144#issuecomment-53633076
-    if (configuration.browsers[0] === 'Chrome' && process.env.TRAVIS) {
+    /*if (configuration.browsers[0] === 'Chrome' && process.env.TRAVIS) {
         configuration.customLaunchers = {
             'Chrome-travis-ci': {
                 base: 'Chrome',
@@ -80,7 +80,7 @@ module.exports = function (config) {
         };
         console.log('>> started on travis');
         configuration.browsers = ['Chrome_travis_ci'];
-    }
+    }*/
 
     config.set(configuration);
 };
