@@ -16,11 +16,24 @@ function listFiles() {
         devDependencies: true
     });
 
-    return wiredep(wiredepOptions).js
+    var patterns = wiredep(wiredepOptions).js
         .concat([
             path.join(conf.paths.tmp, '/serve/app/index.module.js')
         ])
         .concat(pathSrcHtml);
+
+    var files = patterns.map(function (pattern) {
+        return {
+            pattern: pattern
+        };
+    });
+    files.push({
+        pattern: path.join(conf.paths.src, '/assets/**/*'),
+        included: false,
+        served: true,
+        watched: false
+    });
+    return files;
 }
 
 module.exports = function (config) {
@@ -34,19 +47,20 @@ module.exports = function (config) {
 
         ngHtml2JsPreprocessor: {
             stripPrefix: conf.paths.src + '/',
-            moduleName: '7JsCi'
+            moduleName: 'app'
         },
 
         logLevel: 'WARN',
 
-        frameworks: ['jasmine'],
+        frameworks: ['mocha', 'sinon-chai'],
 
-        browsers: ['Firefox'],
+        browsers: ['PhantomJS2'],
 
         plugins: [
-            'karma-firefox-launcher',
+            'karma-sinon-chai',
+            'karma-mocha',
+            'karma-phantomjs2-launcher',
             'karma-coverage',
-            'karma-jasmine',
             'karma-ng-html2js-preprocessor'
         ],
 
@@ -55,10 +69,15 @@ module.exports = function (config) {
             dir: 'coverage/'
         },
 
-        reporters: ['progress']
+        reporters: ['progress'],
+
+        proxies: {
+            '/assets/': path.join('/base/', conf.paths.src, '/assets/')
+        }
     };
 
     configuration.preprocessors = {};
+
     pathSrcHtml.forEach(function (path) {
         configuration.preprocessors[path] = ['ng-html2js'];
     });
