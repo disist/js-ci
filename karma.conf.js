@@ -54,12 +54,12 @@ module.exports = function (config) {
 
         frameworks: ['mocha', 'sinon-chai'],
 
-        browsers: ['PhantomJS2'],
+        browsers: ['PhantomJS'],
 
         plugins: [
             'karma-sinon-chai',
             'karma-mocha',
-            'karma-phantomjs2-launcher',
+            'karma-phantomjs-launcher',
             'karma-coverage',
             'karma-ng-html2js-preprocessor'
         ],
