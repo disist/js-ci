@@ -1,0 +1,26 @@
+<md-content>
+
+    <md-button class="md-primary" ui-sref="main">Back</md-button>
+
+    <md-input-container>
+        <label>First value</label>
+        <input name="first" ng-model="calculateCtrl.first" placeholder="Enter first value">
+    </md-input-container>
+
+    <md-input-container>
+        <label>Second value</label>
+        <input name="second" ng-model="calculateCtrl.second" placeholder="Enter second value">
+    </md-input-container>
+
+    <div>
+        <md-button ng-click="calculateCtrl.calculate()">
+            Calculate
+        </md-button>
+    </div>
+
+    <div>
+        <label>Result: </label>
+        <label id="result">{{calculateCtrl.result}}</label>
+    </div>
+
+</md-content>

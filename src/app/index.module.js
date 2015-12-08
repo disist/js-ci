@@ -1,11 +1,8 @@
 
-import { config } from './index.config';
-import { routerConfig } from './index.route';
-import { runBlock } from './index.run';
-import { MainController } from './main/main.controller';
+import { appMain } from './main/main.module';
+import { appCalculate } from './calculate/calculate.module';
 
-angular.module('app', ['ui.router', 'ngMaterial'])
-    .config(config)
-    .config(routerConfig)
-    .run(runBlock)
-    .controller('MainController', MainController);
+angular.module('app', [
+    'app.main',
+    'app.calculate'
+]);

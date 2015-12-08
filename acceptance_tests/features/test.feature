@@ -1,9 +1,11 @@
-Feature: Example feature
-    As a user of cucumber.js
-    I want to have documentation on cucumber
-    So that I can concentrate on building awesome applications
+Feature: Calculator
+    As a user of application
+    I want to calculate the sum of the two numbers
+    So that I can view result of calculation
 
-    Scenario: Reading documentation
-        Given I am on the Cucumber.js GitHub repository
-        When I go to the README file
-        Then I should see "Usage" as the page title
+    Scenario: Sum of the two numbers
+        Given I am on the start page
+        When I go to the calculate
+        When I fill first value "1" and second "2"
+        Then I click "Calculate"
+        Then I should see "3" result of calculation
