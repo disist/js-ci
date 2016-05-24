@@ -1,0 +1,3 @@
+[submodule "r_viewer"]
+	path = r_viewer
+	url = https://github.com/disist/reddit-viewer.git
